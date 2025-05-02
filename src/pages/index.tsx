@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Listbox, Combobox, ListboxButton, ListboxOptions, ListboxOption } from '@headlessui/react';
+import { CircleDashed, Plus, ArrowRightLeft, Crown } from 'lucide-react';
+import * as Tooltip from '@radix-ui/react-tooltip';
 
 type GearType = keyof typeof GEAR_SLOTS; // 'weapon' | 'armor' | 'accessory' | 'emblem'
 type Grade = '전설' | '에픽' | '엘리트';
@@ -28,7 +30,6 @@ interface SelectedJob {
   charId: string;
   jobName: string;
 }
-
 
 const GEAR_SLOTS = {
   weapon: 1,
@@ -71,7 +72,7 @@ const ALL_RUNE_LIBRARY = {
     '침식+': '전설', '얼어붙음+': '전설', '격통+': '전설', '쇠약+': '전설', '안정+': '전설',
     '저격+': '전설', '방호+': '전설', '초기+': '전설', '초자연+': '전설', '생명+': '전설', 
     '성채+': '전설', '난투+': '전설', '검은 불길': '전설', '마나 격류': '전설', '연승': '전설', 
-    '과충전': '전설', '독 안개': '전설', '바위 거인': '전설', '비열한 일격격': '전설'
+    '과충전': '전설', '독 안개': '전설', '바위 거인': '전설', '비열한 일격': '전설'
   },
   accessory: {
     '참격': '엘리트', '돌진': '엘리트', '포효': '엘리트', '패기': '엘리트',
@@ -140,113 +141,2094 @@ const ALL_RUNE_LIBRARY = {
 const PRESET_RUNES = {
   석궁사수: {
     weapon: [
-      { name: '눈 먼 분노', tier: 1 },
-      { name: '천자루 검', tier: 1 },
-      { name: '연격', tier: 2 }
+      {
+        displayName: '눈 먼 분노',
+        runes: {
+          '눈 먼 분노': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '무수한 담금질',
+        runes: {
+          '무수한 담금질': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '가시 덩굴',
+        runes: {
+          '가시 덩굴': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '연격',
+        runes: {
+          '연격': '에픽'
+        },
+        presetTier: 3
+      }
     ],
     armor: [
-      { name: '마나 격류', tier: 1 },
-      { name: '바위 거인', tier: 1 },
-      { name: '비열한 일격', tier: 1 },
-      { name: '안정', tier: 2 },
-      { name: '깨달음', tier: 2 },
-      { name: '초기', tier: 2 },
-      { name: '흡혈', tier: 2 }
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '비열한 일격',
+        runes: {
+          '비열한 일격': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '안정',
+        runes: {
+          '안정': '에픽',
+          '안정+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '깨달음',
+        runes: {
+          '깨달음': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '초기',
+        runes: {
+          '초기': '에픽',
+          '초기+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '흡혈',
+        runes: {
+          '흡혈': '에픽',
+          '흡혈+': '전설'
+        },
+        presetTier: 2
+      },
+       {
+        displayName: '발진',
+        runes: {
+          '발진': '에픽'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '기습',
+        runes: {
+          '기습': '에픽'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '전술가',
+        runes: {
+          '전술가': '에픽'
+        },
+        presetTier: 3
+      },
     ],
     accessory: [
-      { name: '연쇄', tier: 1 },
-      { name: '반전', tier: 1 },
-      { name: '감전', tier: 2 }
+      {
+        displayName: '연쇄',
+        runes: {
+          '연쇄': '에픽',
+          '연쇄+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '반전',
+        runes: {
+          '반전': '엘리트',
+          '반전+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '감전',
+        runes: {
+          '감전': '엘리트',
+          '감전+': '전설'
+        },
+        presetTier: 2
+      }
     ],
     emblem: [
-      { name: '현란함', tier: 1 },
-      { name: '냉혹함', tier: 2 },
-      { name: '날쌤', tier: 2 }
-    ],
+      {
+        displayName: '현란함',
+        runes: {
+          '현란함': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '냉혹함',
+        runes: {
+          '냉혹함': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '날쌤',
+        runes: {
+          '날쌤': '에픽',
+          '날쌤+': '전설'
+        },
+        presetTier: 2
+      }
+    ]
   },
-
-
+  
+  궁수: {
+    weapon: [
+      {
+        displayName: '눈 먼 분노',
+        runes: {
+          '눈 먼 분노': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '무수한 담금질',
+        runes: {
+          '무수한 담금질': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '가시 덩굴',
+        runes: {
+          '가시 덩굴': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '천 자루 검',
+        runes: {
+          '천 자루 검': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '연격',
+        runes: {
+          '연격': '에픽'
+        },
+        presetTier: 3
+      }
+    ],
+    armor: [
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '고요한 바람',
+        runes: {
+          '고요한 바람': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '안정',
+        runes: {
+          '안정': '에픽',
+          '안정+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '깨달음',
+        runes: {
+          '깨달음': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '비열한 일격',
+        runes: {
+          '비열한 일격': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '발진',
+        runes: {
+          '발진': '에픽'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '기습',
+        runes: {
+          '기습': '에픽'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '폭풍',
+        runes: {
+          '폭풍': '에픽',
+          '폭풍+': '전설'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '전술가',
+        runes: {
+          '전술가': '에픽'
+        },
+        presetTier: 3
+      }
+    ],
+    accessory: [
+      {
+        displayName: '치명적',
+        runes: {
+          '치명적': '에픽',
+          '치명적+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '재빠름',
+        runes: {
+          '재빠름': '엘리트',
+          '재빠른+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '매',
+        runes: {
+          '매': '에픽',
+          '매+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '날쌤',
+        runes: {
+          '날쌤': '에픽',
+          '날쌤+': '전설'
+        },
+        presetTier: 3
+      }
+    ],
+    emblem: [
+      {
+        displayName: '현란함',
+        runes: {
+          '현란함': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '지혜로움',
+        runes: {
+          '지혜로움': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '날쌤',
+        runes: {
+          '날쌤': '에픽',
+          '날쌤+': '전설'
+        },
+        presetTier: 2
+      }
+    ]
+  },
+  
+  장궁병: {
+    weapon: [
+      {
+        displayName: '눈 먼 분노',
+        runes: {
+          '눈 먼 분노': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '가시 덩굴',
+        runes: {
+          '가시 덩굴': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '천 자루 검',
+        runes: {
+          '천 자루 검': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '무수한 담금질',
+        runes: {
+          '무수한 담금질': '전설'
+        },
+        presetTier: 3
+      }
+    ],
+    armor: [
+      {
+        displayName: '초자연',
+        runes: {
+          '초자연': '에픽',
+          '초자연+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '거센 소나기',
+        runes: {
+          '거센 소나기': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '고요한 바람',
+        runes: {
+          '고요한 바람': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '비열한 일격',
+        runes: {
+          '비열한 일격': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '저격',
+        runes: {
+          '저격': '에픽',
+          '저격+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '안정',
+        runes: {
+          '안정': '에픽',
+          '안정+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '깨달음',
+        runes: {
+          '깨달음': '전설'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '폭풍',
+        runes: {
+          '폭풍': '에픽',
+          '폭풍+': '전설'
+        },
+        presetTier: 3
+      }
+    ],
+    accessory: [
+      {
+        displayName: '초음파',
+        runes: {
+          '초음파': '에픽',
+          '초음파+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '집중',
+        runes: {
+          '집중': '에픽',
+          '집중+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '끈질김',
+        runes: {
+          '끈질김': '엘리트',
+          '끈질김+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '내상',
+        runes: {
+          '내상': '엘리트',
+          '내상+': '전설'
+        },
+        presetTier: 3
+      }
+    ],
+    emblem: [
+      {
+        displayName: '강렬함',
+        runes: {
+          '강렬함': '에픽',
+          '강렬함+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '날쌤',
+        runes: {
+          '날쌤': '에픽',
+          '날쌤+': '전설'
+        },
+        presetTier: 2
+      }
+    ]
+  },
+  
   도적: {
     weapon: [
-      { name: '경이', tier: 1 }
+      {
+        displayName: '경이',
+        runes: {
+          '경이': '에픽',
+          '경이+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '무수한 담금질',
+        runes: {
+          '무수한 담금질': '전설'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '결투',
+        runes: {
+          '결투': '에픽',
+          '결투+': '전설'
+        },
+        presetTier: 3
+      }
     ],
     armor: [
-      { name: '마나 격류', tier: 1 },
-      { name: '바위 거인', tier: 1 },
-      { name: '비열한 일격', tier: 1 },
-      { name: '비정한 승부사', tier: 1 },
-      { name: '흡혈', tier: 1 }
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '비정한 승부사',
+        runes: {
+          '비정한 승부사': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '비열한 일격',
+        runes: {
+          '비열한 일격': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '흡혈',
+        runes: {
+          '흡혈': '에픽',
+          '흡혈+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 2
+      }
     ],
     accessory: [
-      { name: '치밀함', tier: 1 },
-      { name: '독무', tier: 2 },
-      { name: '땅거미', tier: 2 },
-      { name: '투척', tier: 3 }
+      {
+        displayName: '치밀함',
+        runes: {
+          '치밀함': '엘리트',
+          '치밀함+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '독무',
+        runes: {
+          '독무': '에픽',
+          '독무+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '땅거미',
+        runes: {
+          '땅거미': '에픽',
+          '땅거미+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '투척',
+        runes: {
+          '투척': '엘리트',
+          '투척+': '전설'
+        },
+        presetTier: 3
+      }
     ],
     emblem: [
-      { name: '지혜로움', tier: 1 },
-      { name: '현란함', tier: 1 }
-    ],
+      {
+        displayName: '지혜로움',
+        runes: {
+          '지혜로움': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '현란함',
+        runes: {
+          '현란함': '전설'
+        },
+        presetTier: 1
+      }
+    ]
   },
-
-  듀얼블레이드: {
-    weapon: [
-      { name: '눈 먼 분노', tier: 1 },
-      { name: '무수한 담금질', tier: 2 },
-      { name: '천자루 검', tier: 2 },
-      { name: '경이', tier: 2 }
-    ],
-    armor: [
-      { name: '마나 격류', tier: 1 },
-      { name: '바위 거인', tier: 1 },
-      { name: '초기', tier: 3 },
-      { name: '안정', tier: 3 },
-      { name: '흡혈', tier: 3 },
-      { name: '폭풍', tier: 3 }
-    ],
-    accessory: [
-      { name: '질주', tier: 1 },
-      { name: '열상', tier: 1 },
-      { name: '속행', tier: 2 },
-      { name: '보름달', tier: 2 }
-
-    ],
-    emblem: [
-      { name: '현란함', tier: 1 },
-      { name: '지혜로움', tier: 2 },
-      { name: '날쌤', tier: 3 },
-      { name: '강렬함', tier: 3 },
-    ],
-  },
-
-
+  
   격투가: {
     weapon: [
-      { name: '무수한 담금질', tier: 1 },
-      { name: '천자루 검', tier: 1 },
-      { name: '결투', tier: 1 },
-      { name: '파열', tier: 2 }
+      {
+        displayName: '천 자루 검',
+        runes: {
+          '천 자루 검': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '무수한 담금질',
+        runes: {
+          '무수한 담금질': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '결투',
+        runes: {
+          '결투': '에픽',
+          '결투+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '눈 먼 분노',
+        runes: {
+          '눈 먼 분노': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '파열',
+        runes: {
+          '파열': '전설'
+        },
+        presetTier: 2
+      }
     ],
     armor: [
-      { name: '마나 격류', tier: 1 },
-      { name: '바위 거인', tier: 1 },
-      { name: '초기', tier: 2 },
-      { name: '안정', tier: 2 },
-      { name: '깨달음', tier: 2 },
-      { name: '흡혈', tier: 2 },
-      { name: '폭풍', tier: 2 },
-      { name: '끝없는 활력', tier: 3 }
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '초기',
+        runes: {
+          '초기': '에픽',
+          '초기+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '안정',
+        runes: {
+          '안정': '에픽',
+          '안정+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '깨달음',
+        runes: {
+          '깨달음': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '흡혈',
+        runes: {
+          '흡혈': '에픽',
+          '흡혈+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '폭풍',
+        runes: {
+          '폭풍': '에픽',
+          '폭풍+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '끝없는 활력',
+        runes: {
+          '끝없는 활력': '전설'
+        },
+        presetTier: 3
+      }
     ],
     accessory: [
-      { name: '전진', tier: 1 },
-      { name: '격파', tier: 1 },
-      { name: '열혈', tier: 1 }
+      {
+        displayName: '전진',
+        runes: {
+          '전진': '엘리트',
+          '전진+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '격파',
+        runes: {
+          '격파': '에픽',
+          '격파+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '열혈',
+        runes: {
+          '열혈': '엘리트',
+          '열혈+': '전설'
+        },
+        presetTier: 1
+      }
     ],
     emblem: [
-      { name: '현란함', tier: 1 },
-      { name: '강렬함', tier: 1 }
-    ],
+      {
+        displayName: '현란함',
+        runes: {
+          '현란함': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '강렬함',
+        runes: {
+          '강렬함': '에픽',
+          '강렬함+': '전설'
+        },
+        presetTier: 1
+      }
+    ]
   },
+  
+  듀얼블레이드: {
+    weapon: [
+      {
+        displayName: '눈 먼 분노',
+        runes: {
+          '눈 먼 분노': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '파열',
+        runes: {
+          '파열': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '천 자루 검',
+        runes: {
+          '천 자루 검': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '경이',
+        runes: {
+          '경이': '에픽',
+          '경이+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    armor: [
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+    {
+        displayName: '비열한 승부사',
+        runes: {
+          '비열한 승부사': '전설'
+        },
+        presetTier: 2
+      },
+  
+      {
+        displayName: '초기',
+        runes: {
+          '초기': '에픽',
+          '초기+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '흡혈',
+        runes: {
+          '흡혈': '에픽',
+          '흡혈+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '안정',
+        runes: {
+          '안정': '에픽',
+          '안정+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '폭풍',
+        runes: {
+          '폭풍': '에픽',
+          '폭풍+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    accessory: [
+      {
+        displayName: '질주',
+        runes: {
+          '질주': '에픽',
+          '질주+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '열상',
+        runes: {
+          '열상': '엘리트',
+          '열상+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '속행',
+        runes: {
+          '속행': '엘리트',
+          '속행+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '보름달',
+        runes: {
+          '보름달': '엘리트',
+          '보름달+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    emblem: [
+      {
+        displayName: '현란함',
+        runes: {
+          '현란함': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '지혜로움',
+        runes: {
+          '지혜로움': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '날쌤',
+        runes: {
+          '날쌤': '에픽',
+          '날쌤+': '전설'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '강렬함',
+        runes: {
+          '강렬함': '에픽',
+          '강렬함+': '전설'
+        },
+        presetTier: 3
+      }
+    ]
+  },
+  
+  전사: {
+    weapon: [
+      {
+        displayName: '파열',
+        runes: {
+          '파열': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '결투',
+        runes: {
+          '결투': '에픽',
+          '결투+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '천 자루 검',
+        runes: {
+          '천 자루 검': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '무수한 담금질',
+        runes: {
+          '무수한 담금질': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    armor: [
+      {
+        displayName: '비열한 일격',
+        runes: {
+          '비열한 일격': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '흡혈',
+        runes: {
+          '흡혈': '에픽',
+          '흡혈+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '성채',
+        runes: {
+          '성채': '에픽',
+          '성채+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '난투',
+        runes: {
+          '난투': '에픽',
+          '난투+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    accessory: [
+      {
+        displayName: '참격',
+        runes: {
+          '참격': '엘리트',
+          '참격+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '맹공',
+        runes: {
+          '맹공': '에픽',
+          '맹공+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '돌격',
+        runes: {
+          '돌격': '에픽',
+          '돌격+': '전설'
+        },
+        presetTier: 1
+      }
+    ],
+    emblem: [
+      {
+        displayName: '지혜로움',
+        runes: {
+          '지혜로움': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '현란함',
+        runes: {
+          '현란함': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '광폭함',
+        runes: {
+          '광폭함': '에픽',
+          '광폭함+': '전설'
+        },
+        presetTier: 2
+      }
+    ]
+  },
+  
+  검술사: {
+    weapon: [
+      {
+        displayName: '천 자루 검',
+        runes: {
+          '천 자루 검': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '가시 덩굴',
+        runes: {
+          '가시 덩굴': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '파열',
+        runes: {
+          '파열': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '격노',
+        runes: {
+          '격노': '에픽',
+          '격노+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '무수한 담금질',
+        runes: {
+          '무수한 담금질': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    armor: [
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '깨달음',
+        runes: {
+          '깨달음': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '안정',
+        runes: {
+          '안정': '에픽',
+          '안정+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '비열한 일격',
+        runes: {
+          '비열한 일격': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '흡혈',
+        runes: {
+          '흡혈': '에픽',
+          '흡혈+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '횃불',
+        runes: {
+          '횃불': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    accessory: [
+      {
+        displayName: '관통',
+        runes: {
+          '관통': '에픽',
+          '관통+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '낙화',
+        runes: {
+          '낙화': '에픽',
+          '낙화+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '무희',
+        runes: {
+          '무희': '엘리트',
+          '무희+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '맹렬',
+        runes: {
+          '맹렬': '엘리트',
+          '맹렬+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    emblem: [
+      {
+        displayName: '강렬함',
+        runes: {
+          '강렬함': '에픽',
+          '강렬함+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '현란함',
+        runes: {
+          '현란함': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '날쌤',
+        runes: {
+          '날쌤': '에픽',
+          '날쌤+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '강렬함',
+        runes: {
+          '강렬함': '에픽',
+          '강렬함+': '전설'
+        },
+        presetTier: 2
+      }
+    ]
+  },
+  
+  대검전사: {
+    weapon: [
+      {
+        displayName: '가시 덩굴',
+        runes: {
+          '가시 덩굴': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '눈 먼 분노',
+        runes: {
+          '눈 먼 분노': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '격전',
+        runes: {
+          '격전': '에픽',
+          '격전+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '영혼 수확자',
+        runes: {
+          '영혼 수확자': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    armor: [
+      {
+        displayName: '칼날 보루',
+        runes: {
+          '칼날 보루': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '흡혈',
+        runes: {
+          '흡혈': '에픽',
+          '흡혈+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '얼어붙은 불꽃-하의',
+        runes: {
+          '얼어붙은 불꽃-하의': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '쇄빙',
+        runes: {
+          '쇄빙': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '검은 불길',
+        runes: {
+          '검은 불길': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '횃불',
+        runes: {
+          '횃불': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '초자연',
+        runes: {
+          '초자연': '에픽',
+          '초자연+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '비열한 일격',
+        runes: {
+          '비열한 일격': '전설'
+        },
+        presetTier: 1
+      }
+    ],
+    accessory: [
+      {
+        displayName: '회전',
+        runes: {
+          '회전': '엘리트',
+          '회전+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '탄력',
+        runes: {
+          '탄력': '에픽',
+          '탄력+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '회심',
+        runes: {
+          '회심': '엘리트',
+          '회심+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '반격',
+        runes: {
+          '반격': '에픽',
+          '반격+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '분노',
+        runes: {
+          '분노': '엘리트',
+          '분노+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    emblem: [
+      {
+        displayName: '현란함',
+        runes: {
+          '현란함': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '지혜로움',
+        runes: {
+          '지혜로움': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '날쌤',
+        runes: {
+          '날쌤': '에픽',
+          '날쌤+': '전설'
+        },
+        presetTier: 2
+      }
+    ]
+  },
+  
+  빙결술사: {
+    weapon: [
+      {
+        displayName: '경이',
+        runes: {
+          '경이': '에픽',
+          '경이+': '전설'
+        },
+        presetTier: 1
+      }
+    ],
+    armor: [
+      {
+        displayName: '쇄빙',
+        runes: {
+          '쇄빙': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '거센 소나기',
+        runes: {
+          '거센 소나기': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '안정',
+        runes: {
+          '안정': '에픽',
+          '안정+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '응축된 마력',
+        runes: {
+          '응축된 마력': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '깨달음',
+        runes: {
+          '깨달음': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '붉은 맹약',
+        runes: {
+          '붉은 맹약': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '생명',
+        runes: {
+          '생명': '에픽',
+          '생명+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '성채',
+        runes: {
+          '성채': '에픽',
+          '성채+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '난투',
+        runes: {
+          '난투': '에픽',
+          '난투+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '검은 서약',
+        runes: {
+          '검은 서약': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    accessory: [
+      {
+        displayName: '오로라',
+        runes: {
+          '오로라': '에픽',
+          '오로라+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '북풍',
+        runes: {
+          '북풍': '엘리트',
+          '북풍+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '빙검',
+        runes: {
+          '빙검': '에픽',
+          '빙검+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '검붉은 안개의 고리',
+        runes: {
+          '검붉은 안개의 고리': '유니크'
+        },
+        presetTier: 2
+      }
+    ],
+    emblem: [
+      {
+        displayName: '현란함',
+        runes: {
+          '현란함': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '강렬함',
+        runes: {
+          '강렬함': '에픽',
+          '강렬함+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '날쌤',
+        runes: {
+          '날쌤': '에픽',
+          '날쌤+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '냉혹함',
+        runes: {
+          '냉혹함': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '지혜로움',
+        runes: {
+          '지혜로움': '전설'
+        },
+        presetTier: 2
+      }
+    ]
+  },
+  
+  화염술사: {
+    weapon: [
+      {
+        displayName: '눈 먼 분노',
+        runes: {
+          '눈 먼 분노': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '가시 덩굴',
+        runes: {
+          '가시 덩굴': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '천 자루 검',
+        runes: {
+          '천 자루 검': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '영혼 수확자',
+        runes: {
+          '영혼 수확자': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    armor: [
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '안정',
+        runes: {
+          '안정': '에픽',
+          '안정+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '깨달음',
+        runes: {
+          '깨달음': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '횃불',
+        runes: {
+          '횃불': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '비열한 일격',
+        runes: {
+          '비열한 일격': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '응축된 마력',
+        runes: {
+          '응축된 마력': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '전술가',
+        runes: {
+          '전술가': '에픽'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '붉은 맹약',
+        runes: {
+          '붉은 맹약': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '저격',
+        runes: {
+          '저격': '에픽',
+          '저격+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '초기',
+        runes: {
+          '초기': '에픽',
+          '초기+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    accessory: [
+      {
+        displayName: '잿더미',
+        runes: {
+          '잿더미': '에픽',
+          '잿더미+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '불기둥',
+        runes: {
+          '불기둥': '엘리트',
+          '불기둥+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '불씨',
+        runes: {
+          '불씨': '에픽',
+          '불씨+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '화력',
+        runes: {
+          '화력': '엘리트',
+          '화력+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '분출',
+        runes: {
+          '분출': '엘리트',
+          '분출+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    emblem: [
+      {
+        displayName: '현란함',
+        runes: {
+          '현란함': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '지혜로움',
+        runes: {
+          '지혜로움': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '냉혹함',
+        runes: {
+          '냉혹함': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '날쌤',
+        runes: {
+          '날쌤': '에픽',
+          '날쌤+': '전설'
+        },
+        presetTier: 2
+      }
+    ]
+  },
+  
+  힐러: {
+    weapon: [
+      {
+        displayName: '영혼 수확자',
+        runes: {
+          '영혼 수확자': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '파열',
+        runes: {
+          '파열': '전설'
+        },
+        presetTier: 1
+      }
+    ],
+    armor: [
+      {
+        displayName: '깨달음',
+        runes: {
+          '깨달음': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '검은 불길',
+        runes: {
+          '검은 불길': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '신성한 수양',
+        runes: {
+          '신성한 수양': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '생존 본능',
+        runes: {
+          '생존 본능': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '끝없는 활력',
+        runes: {
+          '끝없는 활력': '전설'
+        },
+        presetTier: 1
+      }
+    ],
+    accessory: [
+      {
+        displayName: '억압',
+        runes: {
+          '억압': '에픽',
+          '억압+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '물결',
+        runes: {
+          '물결': '엘리트',
+          '물결+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '감쌈',
+        runes: {
+          '감쌈': '엘리트',
+          '감쌈+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '빛무리',
+        runes: {
+          '빛무리': '에픽',
+          '빛무리+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '서약',
+        runes: {
+          '서약': '엘리트',
+          '서약+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    emblem: [
+      {
+        displayName: '지혜로움',
+        runes: {
+          '지혜로움': '전설'
+        },
+        presetTier: 1
+      }
+    ]
+  },
+  
+  사제: {
+    weapon: [
+      {
+        displayName: '영혼 수확자',
+        runes: {
+          '영혼 수 harvest자': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '파열',
+        runes: {
+          '파열': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '경이',
+        runes: {
+          '경이': '에픽',
+          '경이+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '천 자루 검',
+        runes: {
+          '천 자루 검': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    armor: [
+      {
+        displayName: '신성한 수양',
+        runes: {
+          '신성한 수양': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '초자연',
+        runes: {
+          '초자연': '에픽',
+          '초자연+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '검은 서약',
+        runes: {
+          '검은 서약': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '성채',
+        runes: {
+          '성채': '에픽',
+          '성채+': '전설'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 3
+      },
+      {
+        displayName: '비열한 일격',
+        runes: {
+          '비열한 일격': '전설'
+        },
+        presetTier: 3
+      }
+    ],
+    accessory: [
+      {
+        displayName: '빛줄기',
+        runes: {
+          '빛줄기': '에픽',
+          '빛줄기+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '수레바퀴',
+        runes: {
+          '수레바퀴': '엘리트',
+          '수레바퀴+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '희생',
+        runes: {
+          '희생': '엘리트',
+          '희생+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '결속',
+        runes: {
+          '링크': '엘리트',
+          '링크+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    emblem: [
+      {
+        displayName: '지혜로움',
+        runes: {
+          '지혜로움': '전설'
+        },
+        presetTier: 1
+      }
+    ]
+  }, 
+  
+  수도사: {
+    weapon: [
+      {
+        displayName: '경이',
+        runes: {
+          '경이': '에픽',
+          '경이+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '몰아치는 바람',
+        runes: {
+          '몰아치는 바람': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '옛 검투사',
+        runes: {
+          '옛 검투사': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    armor: [
+      {
+        displayName: '바위 거인',
+        runes: {
+          '바위 거인': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '마나 격류',
+        runes: {
+          '마나 격류': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '신성한 수양',
+        runes: {
+          '신성한 수양': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '흡혈',
+        runes: {
+          '흡혈': '에픽',
+          '흡혈+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '깨달음',
+        runes: {
+          '깨달음': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '붉은 맹약',
+        runes: {
+          '붉은 맹약': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    accessory: [
+      {
+        displayName: '업화',
+        runes: {
+          '업화': '에픽',
+          '업화+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '광휘',
+        runes: {
+          '광휘': '엘리트',
+          '광휘+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '응보',
+        runes: {
+          '응보': '에픽',
+          '응보+': '전설'
+        },
+        presetTier: 1
+      },
+      {
+        displayName: '정화',
+        runes: {
+          '정화': '엘리트',
+          '정화+': '전설'
+        },
+        presetTier: 2
+      },
+      {
+        displayName: '인과',
+        runes: {
+          '인과': '엘리트',
+          '인과+': '전설'
+        },
+        presetTier: 2
+      }
+    ],
+    emblem: [
+      {
+        displayName: '지혜로움',
+        runes: {
+          '지혜로움': '전설'
+        },
+        presetTier: 1
+      }
+    ]
+  }
 };
 
 const renderStars = (tier) => '★'.repeat(4 - tier);
@@ -364,27 +2346,56 @@ export default function GearTracker() {
       if (!typeMap[g.type]) typeMap[g.type] = [];
       typeMap[g.type].push(g);
     });
-    let total = 0, done = 0;
+  
+    let total = 0;
+    let done = 0;
+    let upgradable = 0;
+  
     Object.entries(GEAR_SLOTS).forEach(([type, count]) => {
       const slots = typeMap[type] || [];
       const validRunes = PRESET_RUNES[job.name]?.[type] ?? [];
+  
+      const runeMap = validRunes.reduce((acc, runePreset) => {
+        Object.entries(runePreset.runes).forEach(([runeName, grade]) => {
+          acc[runeName] = grade;
+        });
+        return acc;
+      }, {} as Record<string, string>);
+  
       const used = new Set();
       let matched = 0;
+  
       slots.forEach(g => {
-        const match = validRunes.find(r =>
-          typeof g.currentRune?.name === 'string' &&
-          r.name.trim() === g.currentRune.name.trim() &&
-          !used.has(r.name)
+        const currentName = g.currentRune?.name?.trim();
+  
+        if (!currentName || !runeMap[currentName]) return;
+  
+        const matchedGrade = runeMap[currentName];
+        const isMatched = Boolean(matchedGrade);
+        const isLegendary = matchedGrade === '전설';
+  
+        // 같은 계열 전설 룬이 존재하는지 확인
+        const hasLegendaryAlt = Object.entries(runeMap).some(
+          ([name, grade]) => name.includes(currentName) && grade === '전설'
         );
-        if (match) {
+  
+        const isUpgradeable = isMatched && !isLegendary && hasLegendaryAlt;
+  
+        if (isMatched && !used.has(currentName)) {
           matched++;
-          used.add(match.name);
+          used.add(currentName);
+        }
+  
+        if (isUpgradeable) {
+          upgradable++;
         }
       });
+  
       total += count;
       done += Math.min(count, matched);
     });
-    return `${done} / ${total} 부위 완료`;
+  
+    return `${done} / ${total} 부위 완료` + (upgradable > 0 ? ` (업그레이드 가능: ${upgradable})` : '');
   };
 
   const selectedJob = characters.find(c => c.id === selected.charId)?.jobs.find(j => j.name === selected.jobName);
@@ -438,59 +2449,17 @@ export default function GearTracker() {
 
       {/* 무기 */}
       <div>
-        
         {/* 유틸: 부위별 프로그레스바 */}
-        {['weapon'].map((type) => {
-          const gears = selectedJob.gears.filter(g => g.type === type);
-          const validRunes = PRESET_RUNES[selectedJob.name]?.[type] ?? [];
-          const used = new Set();
-          gears.forEach(g => {
-            const match = validRunes.find(r =>
-              typeof g.currentRune?.name === 'string' &&
-              r.name.trim() === g.currentRune.name.trim() &&
-              !used.has(r.name)
-            );
-            if (match) {
-              used.add(match.name);
-            }
-          });
-          const label = {
-            weapon: '무기',
-            armor: '방어구',
-            accessory: '장신구',
-            emblem: '엠블럼',
-          }[type];
-          return (
-            <div className="flex gap-2 items-center" key={label}>
-              <div className="text-xl font-semibold">{label}</div>
-              {gears.map((g, i) => {
-                const match = validRunes.find(r => typeof g.currentRune?.name === 'string' && r.name.trim() === g.currentRune.name.trim());
-                const isMatched = Boolean(match);
-                const isLegendary = isMatched && g.currentRune.grade === '전설';
-                const isUpgradeable = isMatched && g.currentRune.grade !== '전설';
-
-                const color = isLegendary
-                  ? 'bg-green-500'
-                  : isUpgradeable
-                    ? 'bg-yellow-400'
-                    : 'bg-gray-300';
-
-                return (
-                  <div
-                    key={i}
-                    className={`w-5 h-5 rounded-full ${color} border border-gray-400`}
-                    title={g.currentRune.name || '미지정'}
-                  />
-                );
-              })}
-            </div>
-          );
-        })}
+        <div>
+          {
+            <GearProgressIcon type='weapon' selectedJob={selectedJob}/>
+          }
+        </div>
         <p className="text-sm text-gray-600 mb-2">
           목표 룬: {PRESET_RUNES[selectedJob.name]?.weapon
             .slice()
-            .sort((a,b) => a.tier - b.tier)
-            .map(r => `${r.name}(${renderStars(r.tier)})`)
+            .sort((a,b) => a.presetTier - b.presetTier)
+            .map(r => `${r.displayName}(${renderStars(r.presetTier)})`)
             .join(' / ')}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -503,57 +2472,16 @@ export default function GearTracker() {
       {/* 장신구 */}
       <div>
         {/* 유틸: 부위별 프로그레스바 */}
-        {['accessory'].map((type) => {
-          const gears = selectedJob.gears.filter(g => g.type === type);
-          const validRunes = PRESET_RUNES[selectedJob.name]?.[type] ?? [];
-          const used = new Set();
-          gears.forEach(g => {
-            const match = validRunes.find(r =>
-              typeof g.currentRune?.name === 'string' &&
-              r.name.trim() === g.currentRune.name.trim() &&
-              !used.has(r.name)
-            );
-            if (match) {
-              used.add(match.name);
-            }
-          });
-          const label = {
-            weapon: '무기',
-            armor: '방어구',
-            accessory: '장신구',
-            emblem: '엠블럼',
-          }[type];
-          return (
-            <div className="flex gap-2 items-center" key={label}>
-              <div className="text-xl font-semibold">{label}</div>
-              {gears.map((g, i) => {
-                const match = validRunes.find(r => typeof g.currentRune?.name === 'string' && r.name.trim() === g.currentRune.name.trim());
-                const isMatched = Boolean(match);
-                const isLegendary = isMatched && g.currentRune.grade === '전설';
-                const isUpgradeable = isMatched && g.currentRune.grade !== '전설';
-
-                const color = isLegendary
-                  ? 'bg-green-500'
-                  : isUpgradeable
-                    ? 'bg-yellow-400'
-                    : 'bg-gray-300';
-
-                return (
-                  <div
-                    key={i}
-                    className={`w-5 h-5 rounded-full ${color} border border-gray-400`}
-                    title={g.currentRune.name || '미지정'}
-                  />
-                );
-              })}
-            </div>
-          );
-        })}
+        <div>
+          {
+            <GearProgressIcon type='accessory' selectedJob={selectedJob}/>
+          }
+        </div>
         <p className="text-sm text-gray-600 mb-2">
           목표 룬: {PRESET_RUNES[selectedJob.name]?.accessory
             .slice()
-            .sort((a,b) => a.tier - b.tier)
-            .map(r => `${r.name}(${renderStars(r.tier)})`)
+            .sort((a,b) => a.presetTier - b.presetTier)
+            .map(r => `${r.displayName}(${renderStars(r.presetTier)})`)
             .join(' / ')}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -566,57 +2494,16 @@ export default function GearTracker() {
       {/* 엠블럼 */}
       <div>
         {/* 유틸: 부위별 프로그레스바 */}
-        {['emblem'].map((type) => {
-          const gears = selectedJob.gears.filter(g => g.type === type);
-          const validRunes = PRESET_RUNES[selectedJob.name]?.[type] ?? [];
-          const used = new Set();
-          gears.forEach(g => {
-            const match = validRunes.find(r =>
-              typeof g.currentRune?.name === 'string' &&
-              r.name.trim() === g.currentRune.name.trim() &&
-              !used.has(r.name)
-            );
-            if (match) {
-              used.add(match.name);
-            }
-          });
-          const label = {
-            weapon: '무기',
-            armor: '방어구',
-            accessory: '장신구',
-            emblem: '엠블럼',
-          }[type];
-          return (
-            <div className="flex gap-2 items-center" key={label}>
-              <div className="text-xl font-semibold">{label}</div>
-              {gears.map((g, i) => {
-                const match = validRunes.find(r => typeof g.currentRune?.name === 'string' && r.name.trim() === g.currentRune.name.trim());
-                const isMatched = Boolean(match);
-                const isLegendary = isMatched && g.currentRune.grade === '전설';
-                const isUpgradeable = isMatched && g.currentRune.grade !== '전설';
-
-                const color = isLegendary
-                  ? 'bg-green-500'
-                  : isUpgradeable
-                    ? 'bg-yellow-400'
-                    : 'bg-gray-300';
-
-                return (
-                  <div
-                    key={i}
-                    className={`w-5 h-5 rounded-full ${color} border border-gray-400`}
-                    title={g.currentRune.name || '미지정'}
-                  />
-                );
-              })}
-            </div>
-          );
-        })}
+        <div>
+          {
+            <GearProgressIcon type='emblem' selectedJob={selectedJob}/>
+          }
+        </div>
         <p className="text-sm text-gray-600 mb-2">
           목표 룬: {PRESET_RUNES[selectedJob.name]?.emblem
             .slice()
-            .sort((a,b) => a.tier - b.tier)
-            .map(r => `${r.name}(${renderStars(r.tier)})`)
+            .sort((a,b) => a.presetTier - b.presetTier)
+            .map(r => `${r.displayName}(${renderStars(r.presetTier)})`)
             .join(' / ')}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -629,57 +2516,16 @@ export default function GearTracker() {
       {/* 방어구 */}
       <div>
         {/* 유틸: 부위별 프로그레스바 */}
-        {['armor'].map((type) => {
-          const gears = selectedJob.gears.filter(g => g.type === type);
-          const validRunes = PRESET_RUNES[selectedJob.name]?.[type] ?? [];
-          const used = new Set();
-          gears.forEach(g => {
-            const match = validRunes.find(r =>
-              typeof g.currentRune?.name === 'string' &&
-              r.name.trim() === g.currentRune.name.trim() &&
-              !used.has(r.name)
-            );
-            if (match) {
-              used.add(match.name);
-            }
-          });
-          const label = {
-            weapon: '무기',
-            armor: '방어구',
-            accessory: '장신구',
-            emblem: '엠블럼',
-          }[type];
-          return (
-            <div className="flex gap-2 items-center" key={label}>
-              <div className="text-xl font-semibold">{label}</div>
-              {gears.map((g, i) => {
-                const match = validRunes.find(r => typeof g.currentRune?.name === 'string' && r.name.trim() === g.currentRune.name.trim());
-                const isMatched = Boolean(match);
-                const isLegendary = isMatched && g.currentRune.grade === '전설';
-                const isUpgradeable = isMatched && g.currentRune.grade !== '전설';
-
-                const color = isLegendary
-                  ? 'bg-green-500'
-                  : isUpgradeable
-                    ? 'bg-yellow-400'
-                    : 'bg-gray-300';
-
-                return (
-                  <div
-                    key={i}
-                    className={`w-5 h-5 rounded-full ${color} border border-gray-400`}
-                    title={g.currentRune.name || '미지정'}
-                  />
-                );
-              })}
-            </div>
-          );
-        })}
+        <div>
+          {
+            <GearProgressIcon type='armor' selectedJob={selectedJob}/>
+          }
+        </div>
         <p className="text-sm text-gray-600 mb-2">
           목표 룬: {PRESET_RUNES[selectedJob.name]?.armor
             .slice()
-            .sort((a,b) => a.tier - b.tier)
-            .map(r => `${r.name}(${renderStars(r.tier)})`)
+            .sort((a,b) => a.presetTier - b.presetTier)
+            .map(r => `${r.displayName}(${renderStars(r.presetTier)})`)
             .join(' / ')}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -703,17 +2549,58 @@ function GearSlot({ gear, idx, jobName, updateGearFn }) {
   const filteredRunes = Object.keys(allRunes).filter(name => name.includes(query));
 
   const jobPreset = PRESET_RUNES[jobName]?.[gear.type] ?? [];
-  const matched = typeof gear.currentRune?.name === 'string' &&
-    jobPreset.some(preset => preset.name.trim() === gear.currentRune.name.trim());
-  const borderColor = matched
-    ? (gear.currentRune.grade === '전설' ? 'border-yellow-500' : gear.currentRune.grade === '에픽' ? 'border-pink-500' : 'border-[#8568a1]')
-    : 'border-red-400';
+
+  // 룬 프리셋을 평탄화하여 이름과 등급을 맵으로
+  const runeMap = jobPreset.reduce((acc, preset) => {
+    Object.entries(preset.runes).forEach(([runeName, grade]) => {
+      acc[runeName] = grade;
+    });
+    return acc;
+  }, {} as Record<string, string>);
+
+  const currentName = gear.currentRune?.name?.trim();
+  const currentGrade = gear.currentRune?.grade;
+  const matchedGrade = runeMap[currentName];
+
+  const isMatched = Boolean(matchedGrade);
+  const isLegendary = currentGrade === '전설';
+  const isEpic = currentGrade === '에픽';
+
+  const hasLegendaryAlt = Object.entries(runeMap).some(
+    ([name, grade]) =>
+      name.includes(currentName) && grade === '전설' && name !== currentName
+  );
+
+  const isUpgradeable = isMatched && !isLegendary && hasLegendaryAlt;
+
+  const borderColor = isMatched
+    ? isLegendary
+      ? 'border-yellow-500'
+      : isEpic
+        ? 'border-pink-500'
+        : 'border-purple-500'
+    : 'border-gray-400';
 
   return (
-    <div className={`border-2 ${borderColor} rounded-xl p-4 shadow flex flex-col gap-2`}>
+    <div
+      className={`border-2 ${borderColor} rounded-xl p-4 shadow flex flex-col gap-2`}
+      title={
+        isUpgradeable
+          ? '업그레이드 가능한 룬입니다.'
+          : isMatched
+            ? '프리셋에 포함된 룬입니다.'
+            : '프리셋 외 룬입니다.'
+      }
+    >
       <Combobox
         value={gear.currentRune.name}
-        onChange={(val) => updateGearFn(idx, { ...gear.currentRune, name: val, grade: allRunes[val] || '엘리트' })}
+        onChange={(val) =>
+          updateGearFn(idx, {
+            ...gear.currentRune,
+            name: val,
+            grade: allRunes[val] || '엘리트',
+          })
+        }
       >
         <div className="relative">
           <Combobox.Input
@@ -742,4 +2629,80 @@ function GearSlot({ gear, idx, jobName, updateGearFn }) {
     </div>
   );
 }
+function GearProgressIcon({ type, selectedJob }) {
+  const gears = selectedJob.gears.filter(g => g.type === type);
+  const validRunes = PRESET_RUNES[selectedJob.name]?.[type] ?? [];
 
+  // 룬과 티어 정보를 매핑 (runes: 룬 이름 -> 등급, presetTier: 프리셋 티어)
+  const presetMap = validRunes.reduce((acc, preset) => {
+    Object.entries(preset.runes).forEach(([runeName]) => {
+      // 실제 등급은 ALL_RUNE_LIBRARY에서 가져옴
+      const realGrade = ALL_RUNE_LIBRARY[type]?.[runeName];
+      if (realGrade) {
+        acc[runeName] = { grade: realGrade, presetTier: preset.presetTier };
+      }
+    });
+    return acc;
+  }, {} as Record<string, { grade: string, presetTier: number }>);
+
+  const label = {
+    weapon: '무기',
+    armor: '방어구',
+    accessory: '장신구',
+    emblem: '엠블럼',
+  }[type];
+
+  return (
+    <div className="flex gap-2 items-center" key={label}>
+      <div className="text-xl font-semibold">{label}</div>
+      <Tooltip.Provider delayDuration={100}>
+        {gears.map((g, i) => {
+          const runeName = g.currentRune?.name?.trim();
+          const runeGrade = g.currentRune?.grade;
+          const preset = presetMap[runeName];
+
+          let icon = <CircleDashed className="w-6 h-6 text-gray-400"/>;
+          let tooltipText = '추천되지 않은 룬';
+          let color = 'bg-gray-200';
+
+          if (preset) {
+            const { presetTier } = preset;
+
+            if (presetTier === 1) {
+              if (runeGrade === '전설') {
+                icon = <Crown className="w-5 h-5 text-white"/>;
+                color = 'bg-green-600';
+                tooltipText = `✔ ${runeName}: 추천 룬 + 전설 등급 + 티어 충족`;
+              } else {
+                icon = <Plus className="w-5 h-5 text-white"/>;
+                color = 'bg-purple-400';
+                tooltipText = `⬆ ${runeName}: 추천 룬이지만 전설 아님`;
+              }
+            } else {
+              icon = <ArrowRightLeft className="w-4 h-4 text-white"/>;
+              color = 'bg-yellow-500';
+              tooltipText = `	↔ ${runeName}: 추천 룬이지만 티어가 낮음`;
+            }
+          }
+
+          return (
+            <Tooltip.Root key={i}>
+              <Tooltip.Trigger asChild>
+                <div className={`w-6 h-6 rounded-full ${color} flex items-center justify-center`}>
+                  {icon}
+                </div>
+              </Tooltip.Trigger>
+              <Tooltip.Content
+                side="top"
+                className="bg-black text-white px-2 py-1 text-xs rounded shadow-md z-50"
+              >
+                {tooltipText}
+                <Tooltip.Arrow className="fill-black" />
+              </Tooltip.Content>
+            </Tooltip.Root>
+          );
+        })}
+      </Tooltip.Provider>
+    </div>
+  );
+}
