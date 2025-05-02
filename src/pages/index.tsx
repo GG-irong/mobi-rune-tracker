@@ -8,7 +8,6 @@ const GEAR_SLOTS = {
   emblem: 1,
 };
 
-const GRADES = ["전설", "에픽", "엘리트"];
 const GRADE_COLORS = {
   전설: 'text-yellow-500',
   에픽: 'text-pink-500',
@@ -107,9 +106,6 @@ const ALL_RUNE_LIBRARY = {
     '굳건함+': '전설', '날쌤+': '전설', '강렬함+': '전설', '광폭함+': '전설', '현란함': '전설', '지혜로움': '전설', '냉혹함': '전설'
   }
 };
-
-
-
 
 
 const PRESET_RUNES = {
@@ -223,14 +219,6 @@ const PRESET_RUNES = {
     ],
   },
 };
-
-const ALL_RUNES = Array.from(
-  new Set(
-    Object.values(PRESET_RUNES)
-      .flatMap(obj => Object.values(obj))
-      .flatMap(runes => runes.map(r => r.name))
-  )
-);
 
 const renderStars = (tier) => '★'.repeat(4 - tier);
 
@@ -415,11 +403,9 @@ export default function GearTracker() {
         
         {/* 유틸: 부위별 프로그레스바 */}
         {['weapon'].map((type) => {
-          const slotCount = GEAR_SLOTS[type];
           const gears = selectedJob.gears.filter(g => g.type === type);
           const validRunes = PRESET_RUNES[selectedJob.name]?.[type] ?? [];
           const used = new Set();
-          let matched = 0;
           gears.forEach(g => {
             const match = validRunes.find(r =>
               typeof g.currentRune?.name === 'string' &&
@@ -427,11 +413,9 @@ export default function GearTracker() {
               !used.has(r.name)
             );
             if (match) {
-              matched++;
               used.add(match.name);
             }
           });
-          const percent = Math.round((matched / slotCount) * 100);
           const label = {
             weapon: '무기',
             armor: '방어구',
@@ -439,7 +423,7 @@ export default function GearTracker() {
             emblem: '엠블럼',
           }[type];
           return (
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center" key={label}>
               <div className="text-xl font-semibold">{label}</div>
               {gears.map((g, i) => {
                 const match = validRunes.find(r => typeof g.currentRune?.name === 'string' && r.name.trim() === g.currentRune.name.trim());
@@ -482,11 +466,9 @@ export default function GearTracker() {
       <div>
         {/* 유틸: 부위별 프로그레스바 */}
         {['accessory'].map((type) => {
-          const slotCount = GEAR_SLOTS[type];
           const gears = selectedJob.gears.filter(g => g.type === type);
           const validRunes = PRESET_RUNES[selectedJob.name]?.[type] ?? [];
           const used = new Set();
-          let matched = 0;
           gears.forEach(g => {
             const match = validRunes.find(r =>
               typeof g.currentRune?.name === 'string' &&
@@ -494,11 +476,9 @@ export default function GearTracker() {
               !used.has(r.name)
             );
             if (match) {
-              matched++;
               used.add(match.name);
             }
           });
-          const percent = Math.round((matched / slotCount) * 100);
           const label = {
             weapon: '무기',
             armor: '방어구',
@@ -506,7 +486,7 @@ export default function GearTracker() {
             emblem: '엠블럼',
           }[type];
           return (
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center" key={label}>
               <div className="text-xl font-semibold">{label}</div>
               {gears.map((g, i) => {
                 const match = validRunes.find(r => typeof g.currentRune?.name === 'string' && r.name.trim() === g.currentRune.name.trim());
@@ -549,11 +529,9 @@ export default function GearTracker() {
       <div>
         {/* 유틸: 부위별 프로그레스바 */}
         {['emblem'].map((type) => {
-          const slotCount = GEAR_SLOTS[type];
           const gears = selectedJob.gears.filter(g => g.type === type);
           const validRunes = PRESET_RUNES[selectedJob.name]?.[type] ?? [];
           const used = new Set();
-          let matched = 0;
           gears.forEach(g => {
             const match = validRunes.find(r =>
               typeof g.currentRune?.name === 'string' &&
@@ -561,11 +539,9 @@ export default function GearTracker() {
               !used.has(r.name)
             );
             if (match) {
-              matched++;
               used.add(match.name);
             }
           });
-          const percent = Math.round((matched / slotCount) * 100);
           const label = {
             weapon: '무기',
             armor: '방어구',
@@ -573,7 +549,7 @@ export default function GearTracker() {
             emblem: '엠블럼',
           }[type];
           return (
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center" key={label}>
               <div className="text-xl font-semibold">{label}</div>
               {gears.map((g, i) => {
                 const match = validRunes.find(r => typeof g.currentRune?.name === 'string' && r.name.trim() === g.currentRune.name.trim());
@@ -616,11 +592,9 @@ export default function GearTracker() {
       <div>
         {/* 유틸: 부위별 프로그레스바 */}
         {['armor'].map((type) => {
-          const slotCount = GEAR_SLOTS[type];
           const gears = selectedJob.gears.filter(g => g.type === type);
           const validRunes = PRESET_RUNES[selectedJob.name]?.[type] ?? [];
           const used = new Set();
-          let matched = 0;
           gears.forEach(g => {
             const match = validRunes.find(r =>
               typeof g.currentRune?.name === 'string' &&
@@ -628,11 +602,9 @@ export default function GearTracker() {
               !used.has(r.name)
             );
             if (match) {
-              matched++;
               used.add(match.name);
             }
           });
-          const percent = Math.round((matched / slotCount) * 100);
           const label = {
             weapon: '무기',
             armor: '방어구',
@@ -640,7 +612,7 @@ export default function GearTracker() {
             emblem: '엠블럼',
           }[type];
           return (
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center" key={label}>
               <div className="text-xl font-semibold">{label}</div>
               {gears.map((g, i) => {
                 const match = validRunes.find(r => typeof g.currentRune?.name === 'string' && r.name.trim() === g.currentRune.name.trim());
