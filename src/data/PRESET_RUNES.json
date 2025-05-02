@@ -1,0 +1,2226 @@
+{
+    "전사" : {
+  "weapon": [
+    {
+      "displayName": "파열",
+      "runes": {
+        "파열": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "결투",
+      "runes": {
+        "결투": "에픽",
+        "결투+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "천 자루 검",
+      "runes": {
+        "천 자루 검": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "무수한 담금질",
+      "runes": {
+        "무수한 담금질": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "비열한 일격",
+      "runes": {
+        "비열한 일격": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "흡혈",
+      "runes": {
+        "흡혈": "에픽",
+        "흡혈+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "성채",
+      "runes": {
+        "성채": "에픽",
+        "성채+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "난투",
+      "runes": {
+        "난투": "에픽",
+        "난투+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "참격",
+      "runes": {
+        "참격": "엘리트",
+        "참격+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "맹공",
+      "runes": {
+        "맹공": "에픽",
+        "맹공+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "돌격",
+      "runes": {
+        "돌격": "에픽",
+        "돌격+": "전설"
+      },
+      "presetTier": 1
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "지혜로움",
+      "runes": {
+        "지혜로움": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "광폭함",
+      "runes": {
+        "광폭함": "에픽",
+        "광폭함+": "전설"
+      },
+      "presetTier": 2
+    }
+  ]
+},
+
+"검술사": {
+  "weapon": [
+    {
+      "displayName": "천 자루 검",
+      "runes": {
+        "천 자루 검": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "가시 덩굴",
+      "runes": {
+        "가시 덩굴": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "파열",
+      "runes": {
+        "파열": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "격노",
+      "runes": {
+        "격노": "에픽",
+        "격노+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "무수한 담금질",
+      "runes": {
+        "무수한 담금질": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "깨달음",
+      "runes": {
+        "깨달음": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "안정",
+      "runes": {
+        "안정": "에픽",
+        "안정+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "비열한 일격",
+      "runes": {
+        "비열한 일격": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "흡혈",
+      "runes": {
+        "흡혈": "에픽",
+        "흡혈+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "횃불",
+      "runes": {
+        "횃불": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "관통",
+      "runes": {
+        "관통": "에픽",
+        "관통+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "낙화",
+      "runes": {
+        "낙화": "에픽",
+        "낙화+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "무희",
+      "runes": {
+        "무희": "엘리트",
+        "무희+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "맹렬",
+      "runes": {
+        "맹렬": "엘리트",
+        "맹렬+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "강렬함",
+      "runes": {
+        "강렬함": "에픽",
+        "강렬함+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "날쌤",
+      "runes": {
+        "날쌤": "에픽",
+        "날쌤+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "강렬함",
+      "runes": {
+        "강렬함": "에픽",
+        "강렬함+": "전설"
+      },
+      "presetTier": 2
+    }
+  ]
+},
+
+"대검전사": {
+  "weapon": [
+    {
+      "displayName": "가시 덩굴",
+      "runes": {
+        "가시 덩굴": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "눈 먼 분노",
+      "runes": {
+        "눈 먼 분노": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "격전",
+      "runes": {
+        "격전": "에픽",
+        "격전+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "영혼 수확자",
+      "runes": {
+        "영혼 수확자": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "칼날 보루",
+      "runes": {
+        "칼날 보루": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "흡혈",
+      "runes": {
+        "흡혈": "에픽",
+        "흡혈+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "얼어붙은 불꽃-하의",
+      "runes": {
+        "얼어붙은 불꽃-하의": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "쇄빙",
+      "runes": {
+        "쇄빙": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "검은 불길",
+      "runes": {
+        "검은 불길": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "횃불",
+      "runes": {
+        "횃불": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "초자연",
+      "runes": {
+        "초자연": "에픽",
+        "초자연+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "비열한 일격",
+      "runes": {
+        "비열한 일격": "전설"
+      },
+      "presetTier": 1
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "회전",
+      "runes": {
+        "회전": "엘리트",
+        "회전+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "탄력",
+      "runes": {
+        "탄력": "에픽",
+        "탄력+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "회심",
+      "runes": {
+        "회심": "엘리트",
+        "회심+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "반격",
+      "runes": {
+        "반격": "에픽",
+        "반격+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "분노",
+      "runes": {
+        "분노": "엘리트",
+        "분노+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "지혜로움",
+      "runes": {
+        "지혜로움": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "날쌤",
+      "runes": {
+        "날쌤": "에픽",
+        "날쌤+": "전설"
+      },
+      "presetTier": 2
+    }
+  ]
+},
+
+"궁수": {
+  "weapon": [
+    {
+      "displayName": "눈 먼 분노",
+      "runes": {
+        "눈 먼 분노": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "무수한 담금질",
+      "runes": {
+        "무수한 담금질": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "가시 덩굴",
+      "runes": {
+        "가시 덩굴": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "천 자루 검",
+      "runes": {
+        "천 자루 검": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "연격",
+      "runes": {
+        "연격": "에픽"
+      },
+      "presetTier": 3
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "고요한 바람",
+      "runes": {
+        "고요한 바람": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "안정",
+      "runes": {
+        "안정": "에픽",
+        "안정+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "깨달음",
+      "runes": {
+        "깨달음": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "비열한 일격",
+      "runes": {
+        "비열한 일격": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "발진",
+      "runes": {
+        "발진": "에픽"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "기습",
+      "runes": {
+        "기습": "에픽"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "폭풍",
+      "runes": {
+        "폭풍": "에픽",
+        "폭풍+": "전설"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "전술가",
+      "runes": {
+        "전술가": "에픽"
+      },
+      "presetTier": 3
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "치명적",
+      "runes": {
+        "치명적": "에픽",
+        "치명적+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "재빠름",
+      "runes": {
+        "재빠름": "엘리트",
+        "재빠른+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "매",
+      "runes": {
+        "매": "에픽",
+        "매+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "날쌤",
+      "runes": {
+        "날쌤": "에픽",
+        "날쌤+": "전설"
+      },
+      "presetTier": 3
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "지혜로움",
+      "runes": {
+        "지혜로움": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "날쌤",
+      "runes": {
+        "날쌤": "에픽",
+        "날쌤+": "전설"
+      },
+      "presetTier": 2
+    }
+  ]
+},
+
+"석궁사수": {
+  "weapon": [
+    {
+      "displayName": "눈 먼 분노",
+      "runes": {
+        "눈 먼 분노": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "무수한 담금질",
+      "runes": {
+        "무수한 담금질": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "가시 덩굴",
+      "runes": {
+        "가시 덩굴": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "연격",
+      "runes": {
+        "연격": "에픽"
+      },
+      "presetTier": 3
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "비열한 일격",
+      "runes": {
+        "비열한 일격": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "안정",
+      "runes": {
+        "안정": "에픽",
+        "안정+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "깨달음",
+      "runes": {
+        "깨달음": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "초기",
+      "runes": {
+        "초기": "에픽",
+        "초기+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "흡혈",
+      "runes": {
+        "흡혈": "에픽",
+        "흡혈+": "전설"
+      },
+      "presetTier": 2
+    },
+     {
+      "displayName": "발진",
+      "runes": {
+        "발진": "에픽"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "기습",
+      "runes": {
+        "기습": "에픽"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "전술가",
+      "runes": {
+        "전술가": "에픽"
+      },
+      "presetTier": 3
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "연쇄",
+      "runes": {
+        "연쇄": "에픽",
+        "연쇄+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "반전",
+      "runes": {
+        "반전": "엘리트",
+        "반전+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "감전",
+      "runes": {
+        "감전": "엘리트",
+        "감전+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "냉혹함",
+      "runes": {
+        "냉혹함": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "날쌤",
+      "runes": {
+        "날쌤": "에픽",
+        "날쌤+": "전설"
+      },
+      "presetTier": 2
+    }
+  ]
+},
+
+
+
+"장궁병": {
+  "weapon": [
+    {
+      "displayName": "눈 먼 분노",
+      "runes": {
+        "눈 먼 분노": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "가시 덩굴",
+      "runes": {
+        "가시 덩굴": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "천 자루 검",
+      "runes": {
+        "천 자루 검": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "무수한 담금질",
+      "runes": {
+        "무수한 담금질": "전설"
+      },
+      "presetTier": 3
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "초자연",
+      "runes": {
+        "초자연": "에픽",
+        "초자연+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "거센 소나기",
+      "runes": {
+        "거센 소나기": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "고요한 바람",
+      "runes": {
+        "고요한 바람": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "비열한 일격",
+      "runes": {
+        "비열한 일격": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "저격",
+      "runes": {
+        "저격": "에픽",
+        "저격+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "안정",
+      "runes": {
+        "안정": "에픽",
+        "안정+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "깨달음",
+      "runes": {
+        "깨달음": "전설"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "폭풍",
+      "runes": {
+        "폭풍": "에픽",
+        "폭풍+": "전설"
+      },
+      "presetTier": 3
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "초음파",
+      "runes": {
+        "초음파": "에픽",
+        "초음파+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "집중",
+      "runes": {
+        "집중": "에픽",
+        "집중+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "끈질김",
+      "runes": {
+        "끈질김": "엘리트",
+        "끈질김+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "내상",
+      "runes": {
+        "내상": "엘리트",
+        "내상+": "전설"
+      },
+      "presetTier": 3
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "강렬함",
+      "runes": {
+        "강렬함": "에픽",
+        "강렬함+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "날쌤",
+      "runes": {
+        "날쌤": "에픽",
+        "날쌤+": "전설"
+      },
+      "presetTier": 2
+    }
+  ]
+},
+
+"마법사": {
+  "weapon": [
+    {
+      "displayName": "눈 먼 분노",
+      "runes": {
+        "눈 먼 분노": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "가시 덩굴",
+      "runes": {
+        "가시 덩굴": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "천 자루 검",
+      "runes": {
+        "천 자루 검": "전설"
+      },
+      "presetTier": 1
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "깨달음",
+      "runes": {
+        "깨달음": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "거센 소나기",
+      "runes": {
+        "거센 소나기": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "초자연",
+      "runes": {
+        "초자연": "에픽",
+        "초자연+": "전설"
+      },
+      "presetTier": 1
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "운석",
+      "runes": {
+        "운석": "에픽",
+        "운석+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "산사태",
+      "runes": {
+        "산사태": "엘리트",
+        "산사태+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "서리가시",
+      "runes": {
+        "서리가시": "에픽",
+        "서리가시+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "깜빡임",
+      "runes": {
+        "깜빡임": "엘리트",
+        "깜빡임+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "증폭",
+      "runes": {
+        "증폭": "엘리트",
+        "증폭+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "날쌤",
+      "runes": {
+        "날쌤": "에픽",
+        "날쌤+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "냉혹함",
+      "runes": {
+        "냉혹함": "전설"
+      },
+      "presetTier": 2
+    }
+  ]
+},
+
+
+
+"빙결술사": {
+  "weapon": [
+    {
+      "displayName": "경이",
+      "runes": {
+        "경이": "에픽",
+        "경이+": "전설"
+      },
+      "presetTier": 1
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "쇄빙",
+      "runes": {
+        "쇄빙": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "거센 소나기",
+      "runes": {
+        "거센 소나기": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "안정",
+      "runes": {
+        "안정": "에픽",
+        "안정+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "응축된 마력",
+      "runes": {
+        "응축된 마력": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "깨달음",
+      "runes": {
+        "깨달음": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "붉은 맹약",
+      "runes": {
+        "붉은 맹약": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "생명",
+      "runes": {
+        "생명": "에픽",
+        "생명+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "성채",
+      "runes": {
+        "성채": "에픽",
+        "성채+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "난투",
+      "runes": {
+        "난투": "에픽",
+        "난투+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "검은 서약",
+      "runes": {
+        "검은 서약": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "오로라",
+      "runes": {
+        "오로라": "에픽",
+        "오로라+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "북풍",
+      "runes": {
+        "북풍": "엘리트",
+        "북풍+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "빙검",
+      "runes": {
+        "빙검": "에픽",
+        "빙검+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "검붉은 안개의 고리",
+      "runes": {
+        "검붉은 안개의 고리": "유니크"
+      },
+      "presetTier": 2
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "강렬함",
+      "runes": {
+        "강렬함": "에픽",
+        "강렬함+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "날쌤",
+      "runes": {
+        "날쌤": "에픽",
+        "날쌤+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "냉혹함",
+      "runes": {
+        "냉혹함": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "지혜로움",
+      "runes": {
+        "지혜로움": "전설"
+      },
+      "presetTier": 2
+    }
+  ]
+},
+
+"화염술사": {
+  "weapon": [
+    {
+      "displayName": "눈 먼 분노",
+      "runes": {
+        "눈 먼 분노": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "가시 덩굴",
+      "runes": {
+        "가시 덩굴": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "천 자루 검",
+      "runes": {
+        "천 자루 검": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "영혼 수확자",
+      "runes": {
+        "영혼 수확자": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "안정",
+      "runes": {
+        "안정": "에픽",
+        "안정+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "깨달음",
+      "runes": {
+        "깨달음": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "횃불",
+      "runes": {
+        "횃불": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "비열한 일격",
+      "runes": {
+        "비열한 일격": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "응축된 마력",
+      "runes": {
+        "응축된 마력": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "전술가",
+      "runes": {
+        "전술가": "에픽"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "붉은 맹약",
+      "runes": {
+        "붉은 맹약": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "저격",
+      "runes": {
+        "저격": "에픽",
+        "저격+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "초기",
+      "runes": {
+        "초기": "에픽",
+        "초기+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "잿더미",
+      "runes": {
+        "잿더미": "에픽",
+        "잿더미+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "불기둥",
+      "runes": {
+        "불기둥": "엘리트",
+        "불기둥+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "불씨",
+      "runes": {
+        "불씨": "에픽",
+        "불씨+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "화력",
+      "runes": {
+        "화력": "엘리트",
+        "화력+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "분출",
+      "runes": {
+        "분출": "엘리트",
+        "분출+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "지혜로움",
+      "runes": {
+        "지혜로움": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "냉혹함",
+      "runes": {
+        "냉혹함": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "날쌤",
+      "runes": {
+        "날쌤": "에픽",
+        "날쌤+": "전설"
+      },
+      "presetTier": 2
+    }
+  ]
+},
+
+"힐러": {
+  "weapon": [
+    {
+      "displayName": "영혼 수확자",
+      "runes": {
+        "영혼 수확자": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "파열",
+      "runes": {
+        "파열": "전설"
+      },
+      "presetTier": 1
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "깨달음",
+      "runes": {
+        "깨달음": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "검은 불길",
+      "runes": {
+        "검은 불길": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "신성한 수양",
+      "runes": {
+        "신성한 수양": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "생존 본능",
+      "runes": {
+        "생존 본능": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "끝없는 활력",
+      "runes": {
+        "끝없는 활력": "전설"
+      },
+      "presetTier": 1
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "억압",
+      "runes": {
+        "억압": "에픽",
+        "억압+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "물결",
+      "runes": {
+        "물결": "엘리트",
+        "물결+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "감쌈",
+      "runes": {
+        "감쌈": "엘리트",
+        "감쌈+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "빛무리",
+      "runes": {
+        "빛무리": "에픽",
+        "빛무리+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "서약",
+      "runes": {
+        "서약": "엘리트",
+        "서약+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "지혜로움",
+      "runes": {
+        "지혜로움": "전설"
+      },
+      "presetTier": 1
+    }
+  ]
+},
+
+"사제": {
+  "weapon": [
+    {
+      "displayName": "영혼 수확자",
+      "runes": {
+        "영혼 수 harvest자": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "파열",
+      "runes": {
+        "파열": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "경이",
+      "runes": {
+        "경이": "에픽",
+        "경이+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "천 자루 검",
+      "runes": {
+        "천 자루 검": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "신성한 수양",
+      "runes": {
+        "신성한 수양": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "초자연",
+      "runes": {
+        "초자연": "에픽",
+        "초자연+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "검은 서약",
+      "runes": {
+        "검은 서약": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "성채",
+      "runes": {
+        "성채": "에픽",
+        "성채+": "전설"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "비열한 일격",
+      "runes": {
+        "비열한 일격": "전설"
+      },
+      "presetTier": 3
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "빛줄기",
+      "runes": {
+        "빛줄기": "에픽",
+        "빛줄기+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "수레바퀴",
+      "runes": {
+        "수레바퀴": "엘리트",
+        "수레바퀴+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "희생",
+      "runes": {
+        "희생": "엘리트",
+        "희생+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "결속",
+      "runes": {
+        "링크": "엘리트",
+        "링크+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "지혜로움",
+      "runes": {
+        "지혜로움": "전설"
+      },
+      "presetTier": 1
+    }
+  ]
+}, 
+
+"수도사": {
+  "weapon": [
+    {
+      "displayName": "경이",
+      "runes": {
+        "경이": "에픽",
+        "경이+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "몰아치는 바람",
+      "runes": {
+        "몰아치는 바람": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "옛 검투사",
+      "runes": {
+        "옛 검투사": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "신성한 수양",
+      "runes": {
+        "신성한 수양": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "흡혈",
+      "runes": {
+        "흡혈": "에픽",
+        "흡혈+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "깨달음",
+      "runes": {
+        "깨달음": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "붉은 맹약",
+      "runes": {
+        "붉은 맹약": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "업화",
+      "runes": {
+        "업화": "에픽",
+        "업화+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "광휘",
+      "runes": {
+        "광휘": "엘리트",
+        "광휘+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "응보",
+      "runes": {
+        "응보": "에픽",
+        "응보+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "정화",
+      "runes": {
+        "정화": "엘리트",
+        "정화+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "인과",
+      "runes": {
+        "인과": "엘리트",
+        "인과+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "지혜로움",
+      "runes": {
+        "지혜로움": "전설"
+      },
+      "presetTier": 1
+    }
+  ]
+},
+
+"도적": {
+  "weapon": [
+    {
+      "displayName": "경이",
+      "runes": {
+        "경이": "에픽",
+        "경이+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "무수한 담금질",
+      "runes": {
+        "무수한 담금질": "전설"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "결투",
+      "runes": {
+        "결투": "에픽",
+        "결투+": "전설"
+      },
+      "presetTier": 3
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "비정한 승부사",
+      "runes": {
+        "비정한 승부사": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "비열한 일격",
+      "runes": {
+        "비열한 일격": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "흡혈",
+      "runes": {
+        "흡혈": "에픽",
+        "흡혈+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "치밀함",
+      "runes": {
+        "치밀함": "엘리트",
+        "치밀함+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "독무",
+      "runes": {
+        "독무": "에픽",
+        "독무+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "땅거미",
+      "runes": {
+        "땅거미": "에픽",
+        "땅거미+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "투척",
+      "runes": {
+        "투척": "엘리트",
+        "투척+": "전설"
+      },
+      "presetTier": 3
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "지혜로움",
+      "runes": {
+        "지혜로움": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    }
+  ]
+},
+
+"격투가": {
+  "weapon": [
+    {
+      "displayName": "천 자루 검",
+      "runes": {
+        "천 자루 검": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "무수한 담금질",
+      "runes": {
+        "무수한 담금질": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "결투",
+      "runes": {
+        "결투": "에픽",
+        "결투+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "눈 먼 분노",
+      "runes": {
+        "눈 먼 분노": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "파열",
+      "runes": {
+        "파열": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "초기",
+      "runes": {
+        "초기": "에픽",
+        "초기+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "안정",
+      "runes": {
+        "안정": "에픽",
+        "안정+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "깨달음",
+      "runes": {
+        "깨달음": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "흡혈",
+      "runes": {
+        "흡혈": "에픽",
+        "흡혈+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "폭풍",
+      "runes": {
+        "폭풍": "에픽",
+        "폭풍+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "끝없는 활력",
+      "runes": {
+        "끝없는 활력": "전설"
+      },
+      "presetTier": 3
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "전진",
+      "runes": {
+        "전진": "엘리트",
+        "전진+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "격파",
+      "runes": {
+        "격파": "에픽",
+        "격파+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "열혈",
+      "runes": {
+        "열혈": "엘리트",
+        "열혈+": "전설"
+      },
+      "presetTier": 1
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "강렬함",
+      "runes": {
+        "강렬함": "에픽",
+        "강렬함+": "전설"
+      },
+      "presetTier": 1
+    }
+  ]
+},
+
+"듀얼블레이드": {
+  "weapon": [
+    {
+      "displayName": "눈 먼 분노",
+      "runes": {
+        "눈 먼 분노": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "파열",
+      "runes": {
+        "파열": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "천 자루 검",
+      "runes": {
+        "천 자루 검": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "경이",
+      "runes": {
+        "경이": "에픽",
+        "경이+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "armor": [
+    {
+      "displayName": "마나 격류",
+      "runes": {
+        "마나 격류": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "바위 거인",
+      "runes": {
+        "바위 거인": "전설"
+      },
+      "presetTier": 1
+    },
+  {
+      "displayName": "비열한 승부사",
+      "runes": {
+        "비열한 승부사": "전설"
+      },
+      "presetTier": 2
+    },
+
+    {
+      "displayName": "초기",
+      "runes": {
+        "초기": "에픽",
+        "초기+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "흡혈",
+      "runes": {
+        "흡혈": "에픽",
+        "흡혈+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "안정",
+      "runes": {
+        "안정": "에픽",
+        "안정+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "폭풍",
+      "runes": {
+        "폭풍": "에픽",
+        "폭풍+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "accessory": [
+    {
+      "displayName": "질주",
+      "runes": {
+        "질주": "에픽",
+        "질주+": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "열상",
+      "runes": {
+        "열상": "엘리트",
+        "열상+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "속행",
+      "runes": {
+        "속행": "엘리트",
+        "속행+": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "보름달",
+      "runes": {
+        "보름달": "엘리트",
+        "보름달+": "전설"
+      },
+      "presetTier": 2
+    }
+  ],
+  "emblem": [
+    {
+      "displayName": "현란함",
+      "runes": {
+        "현란함": "전설"
+      },
+      "presetTier": 1
+    },
+    {
+      "displayName": "지혜로움",
+      "runes": {
+        "지혜로움": "전설"
+      },
+      "presetTier": 2
+    },
+    {
+      "displayName": "날쌤",
+      "runes": {
+        "날쌤": "에픽",
+        "날쌤+": "전설"
+      },
+      "presetTier": 3
+    },
+    {
+      "displayName": "강렬함",
+      "runes": {
+        "강렬함": "에픽",
+        "강렬함+": "전설"
+      },
+      "presetTier": 3
+    }
+  ]
+}
+}
