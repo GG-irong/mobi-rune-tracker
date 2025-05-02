@@ -1,6 +1,35 @@
 import { useEffect, useState } from 'react';
 import { Listbox, Combobox, ListboxButton, ListboxOptions, ListboxOption } from '@headlessui/react';
 
+type GearType = keyof typeof GEAR_SLOTS; // 'weapon' | 'armor' | 'accessory' | 'emblem'
+type Grade = '전설' | '에픽' | '엘리트';
+
+interface Gear {
+  type: GearType;
+  index: number;
+  currentRune: {
+    name: string;
+    grade: Grade;
+  };
+}
+
+interface Job {
+  name: string;
+  gears: Gear[];
+}
+
+interface Character {
+  id: string;
+  name: string;
+  jobs: Job[];
+}
+
+interface SelectedJob {
+  charId: string;
+  jobName: string;
+}
+
+
 const GEAR_SLOTS = {
   weapon: 1,
   armor: 5,
@@ -223,9 +252,9 @@ const PRESET_RUNES = {
 const renderStars = (tier) => '★'.repeat(4 - tier);
 
 export default function GearTracker() {
-  const [characters, setCharacters] = useState([]);
-  const [selected, setSelected] = useState({ charId: '', jobName: '' });
-  const [newJob, setNewJob] = useState('');
+  const [characters, setCharacters] = useState<Character[]>([]);
+  const [selected, setSelected] = useState<SelectedJob>({ charId: '', jobName: '' });
+  const [newJob, setNewJob] = useState<string>('');
   const jobOptions = Object.keys(PRESET_RUNES);
 
   useEffect(() => {
@@ -261,22 +290,31 @@ export default function GearTracker() {
     saveToLocal(updated);
   };
 
-  const addJob = (charId) => {
+  const addJob = (charId: string) => {
     if (!newJob) return;
-    const gears = Object.entries(GEAR_SLOTS).flatMap(([type, count]) =>
+  
+    const gears: Gear[] = Object.entries(GEAR_SLOTS).flatMap(([type, count]) =>
       Array.from({ length: count }, (_, i) => ({
-        type,
+        type: type as GearType,
         index: i + 1,
-        currentRune: { name: '', grade: '엘리트' },
+        currentRune: { name: '', grade: '엘리트' as Grade },
       }))
     );
+  
     const updated = characters.map(c =>
-      c.id === charId ? { ...c, jobs: [...c.jobs, { name: newJob, gears }] } : c
+      c.id === charId
+        ? {
+            ...c,
+            jobs: [...c.jobs, { name: newJob, gears }]
+          }
+        : c
     );
+  
     setCharacters(updated);
     saveToLocal(updated);
     setNewJob('');
   };
+  
 
   const deleteJob = (charId, jobName) => {
     const updated = characters.map(c =>
@@ -680,7 +718,7 @@ function GearSlot({ gear, idx, jobName, updateGearFn }) {
         <div className="relative">
           <Combobox.Input
             className="border p-2 rounded w-full"
-            displayValue={(name) => name}
+            displayValue={(name: string) => name}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="룬 이름 선택 또는 입력"
           />
