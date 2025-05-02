@@ -217,18 +217,20 @@ export default function GearTracker() {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Listbox value={newJob} onChange={setNewJob}>
-                <ListboxButton className=" border p-2 rounded w-full mb-2">
-                  {newJob || "직업 선택"}
-                </ListboxButton>
-                <ListboxOptions className=" border rounded shadow bg-white">
-                  {jobOptions.map(job => (
-                    <ListboxOption key={job} value={job} className="cursor-pointer px-4 py-2 hover:bg-gray-100">
-                      {job}
-                    </ListboxOption>
-                  ))}
-                </ListboxOptions>
-              </Listbox>
+              <div className="w-full">
+                <Listbox value={newJob} onChange={setNewJob}>
+                  <ListboxButton className=" border p-2 rounded w-full mb-2">
+                    {newJob || "직업 선택"}
+                  </ListboxButton>
+                  <ListboxOptions className=" border rounded shadow bg-white w-full mb-2">
+                    {jobOptions.map(job => (
+                      <ListboxOption key={job} value={job} className="cursor-pointer px-4 py-2 hover:bg-gray-100">
+                        {job}
+                      </ListboxOption>
+                    ))}
+                  </ListboxOptions>
+                </Listbox>
+              </div>
               <div className="text-sm text-white select-none">🗑</div>
             </div>
             <div className="flex items-center gap-2">
